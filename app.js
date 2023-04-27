@@ -57,7 +57,7 @@ loadNextPage()
 function loadNextPage(){
     actualPageIndex++;
     if ( actualPageIndex >= PokeService.PAGE_COUNT){
-        actualPageIndex= 0;
+        actualPageIndex = 0;
     }
     PokeService.getPageAtIndex(actualPageIndex).then(pokemonPage => {
         actualPage = pokemonPage;

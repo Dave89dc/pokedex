@@ -12,5 +12,11 @@ console.log(pokemonName);
 
 
 PokeService.getDetail(pokemonName).then(pokemon => {
-    console.log(pokemon);
+    const pokemonName = new Pokémon(pokemon.name);
+    for (let i = 0; i < pokemon.stats.length; i++) {
+        const object = pokemon.stats[i];
+        const newStats = new Stats(object.name, object.baseValue);
+        pokemonName.addStats(newStats);
+    }
+    console.log(pokemonName);
 })
